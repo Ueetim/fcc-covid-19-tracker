@@ -1,3 +1,9 @@
+<script context="module">
+    export async function preload(page) {
+        return { state: page.params['state'] };
+    }
+</script>
+
 <script>
     import CovidStat from '../components/CovidStat.svelte';
 
@@ -5,10 +11,12 @@
 
     import TableContainer from '../components/TableContainer.svelte';
 
+    export let state;
+
 </script>
 
 <CovidStat />
 
 <CovidChart />
 
-<TableContainer />
+<h1>{state}</h1>
